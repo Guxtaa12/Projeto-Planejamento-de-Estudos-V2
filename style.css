@@ -1,0 +1,607 @@
+/* Variáveis de Cor e Fonte (iguais às anteriores) */
+:root {
+    --cor-primaria: #6a11cb;
+    /* Roxo vibrante */
+    --cor-secundaria: #00CDA0;
+    /* Azul vibrante */
+    --cor-fundo: #f0f2f5;
+    /* Fundo claro */
+    --cor-card: #ffffff;
+    /* Branco para os cards */
+    --cor-texto-titulo: #333;
+    --cor-texto-corpo: #555;
+    --cor-texto-botao: #ffffff;
+    --cor-borda: #e0e0e0;
+    --cor-sombra: rgba(0, 0, 0, 0.1);
+    --cor-delete: #e74c3c;
+    /* Vermelho para botão de remover */
+    --cor-delete-hover: #c0392b;
+    --cor-sucesso: #2ecc71;
+    /* Verde para mensagens de sucesso */
+
+    --fonte-principal: 'Poppins', sans-serif;
+    /* Fonte jovem */
+}
+
+/* Reset básico e Estilos Globais (iguais) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-corpo);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px var(--cor-sombra);
+    position: relative;
+    /* Para posicionar o botão voltar */
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--cor-texto-botao);
+    padding-top: 20px;
+    /* Espaço para o botão voltar não sobrepor */
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* Botão Voltar */
+.btn-voltar {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-voltar:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Estilo dos Cards (igual) */
+.card {
+    background-color: var(--cor-card);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--cor-sombra);
+    border: 1px solid var(--cor-borda);
+}
+
+.card h2 {
+    color: var(--cor-primaria);
+    margin-bottom: 20px;
+    font-size: 1.6em;
+    font-weight: 600;
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.card h2 .icon {
+    margin-right: 10px;
+    font-style: normal;
+}
+
+/* Menu da Home Page */
+.home-menu {
+    background-color: var(--cor-card);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--cor-sombra);
+    text-align: center;
+}
+
+.home-menu h2 {
+    color: var(--cor-primaria);
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.home-menu nav {
+    display: flex;
+    flex-direction: column;
+    /* Botões um abaixo do outro */
+    gap: 15px;
+    /* Espaço entre botões */
+    align-items: center;
+}
+
+.menu-button {
+    display: inline-flex;
+    /* Para alinhar ícone e texto */
+    align-items: center;
+    justify-content: center;
+    padding: 15px 25px;
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    color: var(--cor-texto-botao);
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    width: 80%;
+    /* Largura dos botões */
+    max-width: 350px;
+    /* Largura máxima */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    /* Centraliza texto se quebrar linha */
+}
+
+.menu-button .icon {
+    margin-right: 10px;
+    font-style: normal;
+}
+
+.menu-button:hover {
+    opacity: 0.9;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Formulário de Tarefas (igual) */
+#form-tarefa {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--cor-texto-titulo);
+}
+
+#form-tarefa input[type="text"],
+#form-tarefa input[type="date"],
+#texto-anotacoes {
+    padding: 12px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    font-family: var(--fonte-principal);
+    font-size: 1em;
+    width: 100%;
+}
+
+#form-tarefa input[type="text"]:focus,
+#form-tarefa input[type="date"]:focus,
+#texto-anotacoes:focus {
+    outline: none;
+    border-color: var(--cor-secundaria);
+    box-shadow: 0 0 5px rgba(37, 117, 252, 0.3);
+}
+
+/* Botões (gerais) */
+.btn-add,
+.btn-delete,
+#btn-salvar-anotacoes {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--fonte-principal);
+    font-weight: 600;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-add,
+#btn-salvar-anotacoes {
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    color: var(--cor-texto-botao);
+    align-self: flex-start;
+    margin-top: 10px;
+    /* Espaço acima do botão */
+}
+
+.btn-add:hover,
+#btn-salvar-anotacoes:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.btn-delete {
+    background-color: var(--cor-delete);
+    color: var(--cor-texto-botao);
+    margin-left: 10px;
+    font-size: 0.9em;
+    padding: 5px 10px;
+}
+
+.btn-delete:hover {
+    background-color: var(--cor-delete-hover);
+    transform: scale(1.05);
+}
+
+/* Lista de Tarefas (igual) */
+#lista-tarefas {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    /* Espaço acima da lista */
+}
+
+#lista-tarefas li {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-left: 5px solid var(--cor-secundaria);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#lista-tarefas li span:first-child {
+    /* Nome da tarefa */
+    flex-grow: 1;
+    margin-right: 10px;
+    font-weight: 600;
+    /* Dar um destaque ao nome */
+}
+
+#lista-tarefas li .prazo {
+    font-size: 0.9em;
+    color: #888;
+    font-style: italic;
+    margin-right: 10px;
+    white-space: nowrap;
+    /* Evita quebra de linha no prazo */
+}
+
+/* Anotações (igual) */
+#anotacoes textarea {
+    width: 100%;
+    min-height: 200px;
+    /* Aumentar um pouco a altura */
+    resize: vertical;
+    margin-bottom: 15px;
+    /* Espaço antes do botão salvar */
+}
+
+/* Mensagens de Feedback */
+.mensagem {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 600;
+    display: none;
+    /* Começa escondida */
+}
+
+.sucesso {
+    background-color: #d4edda;
+    /* Fundo verde claro */
+    color: #155724;
+    /* Texto verde escuro */
+    border: 1px solid #c3e6cb;
+}
+
+/* Estilos para Notificações Visuais de Prazo (igual) */
+.prazo-proximo {
+    border-left-color: #f39c12 !important;
+    background-color: #fff8e1 !important;
+}
+
+.prazo-vencido {
+    border-left-color: var(--cor-delete) !important;
+    background-color: #ffebee !important;
+    opacity: 0.8;
+}
+
+.prazo-vencido span:first-child {
+    text-decoration: line-through;
+}
+
+.prazo-proximo .prazo,
+.prazo-vencido .prazo {
+    font-weight: bold;
+    font-style: normal;
+}
+
+.prazo-proximo .prazo {
+    color: #e67e22;
+}
+
+.prazo-vencido .prazo {
+    color: var(--cor-delete);
+}
+
+
+/* Rodapé (igual) */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9em;
+}
+
+/* Responsividade (igual, mas ajustar botão voltar se necessário) */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.8em;
+        /* Reduzir um pouco mais */
+    }
+
+    .container {
+        padding: 20px;
+        /* Menos padding no container geral */
+    }
+
+    .btn-voltar {
+        top: 15px;
+        left: 15px;
+        padding: 6px 12px;
+        font-size: 0.8em;
+    }
+
+    header {
+        padding-top: 40px;
+        /* Mais espaço para o botão voltar */
+        margin-bottom: 20px;
+    }
+
+    .card h2 {
+        font-size: 1.4em;
+    }
+
+    .menu-button {
+        width: 95%;
+        /* Botões ocupam mais largura */
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+
+    #lista-tarefas li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #lista-tarefas li span:first-child {
+        /* Nome da tarefa */
+        margin-bottom: 5px;
+        /* Espaço abaixo do nome */
+    }
+
+    #lista-tarefas li .prazo {
+        margin-bottom: 8px;
+        /* Espaço abaixo do prazo */
+    }
+
+    .btn-delete {
+        margin-left: 0;
+        margin-top: 5px;
+        align-self: flex-end;
+        /* Mantém botão no canto */
+    }
+
+    .btn-add,
+    #btn-salvar-anotacoes {
+        align-self: stretch;
+        /* Botão ocupa largura toda */
+        text-align: center;
+    }
+
+    /* --- Estilos para Páginas de Autenticação (Login/Registro) --- */
+
+    .body-auth {
+        /* Fundo diferente para login/registro */
+        background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        /* Ocupa a altura toda da tela */
+        padding: 20px;
+    }
+
+    .auth-container {
+        width: 100%;
+        max-width: 450px;
+        /* Largura máxima do card de auth */
+    }
+
+    .auth-card {
+        background-color: var(--cor-card);
+        padding: 30px 40px;
+        /* Mais padding lateral */
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        text-align: center;
+    }
+
+    .auth-card h1 {
+        font-size: 1.5em;
+        /* Título menor no card */
+        color: var(--cor-primaria);
+        margin-bottom: 5px;
+        text-shadow: none;
+        /* Sem sombra de texto aqui */
+    }
+
+
+    .auth-card h2 {
+        font-size: 1.8em;
+        /* Título principal do card */
+        color: var(--cor-texto-titulo);
+        margin-bottom: 25px;
+        border: none;
+        /* Sem borda inferior */
+        padding-bottom: 0;
+        font-weight: 600;
+    }
+
+    .form-auth {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        /* Espaço entre os inputs */
+        text-align: left;
+        /* Alinha labels à esquerda */
+    }
+
+    .form-auth .input-group label {
+        font-weight: 600;
+        color: var(--cor-texto-titulo);
+        margin-bottom: 8px;
+        /* Mais espaço abaixo da label */
+        display: block;
+        /* Garante que a label fique acima */
+    }
+
+    .form-auth input[type="text"],
+    .form-auth input[type="password"],
+    .form-auth input[type="email"] {
+        /* Adicionado email se usar */
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid var(--cor-borda);
+        border-radius: 5px;
+        font-family: var(--fonte-principal);
+        font-size: 1em;
+    }
+
+    .form-auth input:focus {
+        outline: none;
+        border-color: var(--cor-secundaria);
+        box-shadow: 0 0 5px rgba(37, 117, 252, 0.3);
+    }
+
+    .btn-auth {
+        padding: 14px 20px;
+        border: none;
+        border-radius: 5px;
+        background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+        color: var(--cor-texto-botao);
+        font-family: var(--fonte-principal);
+        font-weight: 600;
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 10px;
+        /* Espaço acima do botão */
+    }
+
+    .btn-auth:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .auth-switch {
+        margin-top: 25px;
+        font-size: 0.95em;
+        color: var(--cor-texto-corpo);
+    }
+
+    .auth-switch a {
+        color: var(--cor-secundaria);
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .auth-switch a:hover {
+        text-decoration: underline;
+    }
+
+    /* Estilo para mensagens de erro/sucesso nos forms auth */
+    .form-auth .mensagem {
+        margin-top: 0;
+        /* Remover margem extra */
+        margin-bottom: -5px;
+        /* Puxar um pouco pra cima */
+        padding: 10px;
+        font-size: 0.9em;
+        text-align: center;
+    }
+
+    .erro {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+    }
+
+
+    /* --- Estilos para Botão Logout --- */
+    .btn-logout {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        /* Posiciona no canto direito */
+        background-color: rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 0.9em;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        z-index: 10;
+        /* Garante que fique acima de outros elementos do header */
+    }
+
+    .btn-logout:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* Ajuste responsivo para o botão logout */
+    @media (max-width: 600px) {
+        .btn-logout {
+            top: 15px;
+            right: 15px;
+            padding: 6px 12px;
+            font-size: 0.8em;
+        }
+
+        /* Ajustar header se o botão voltar e logout estiverem juntos */
+        .container header {
+            position: relative;
+            /* Garante contexto para botões absolutos */
+        }
+    }
+}

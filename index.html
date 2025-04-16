@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Estudos - Bem-vindo!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Plataforma de Estudos</h1>
+            <div id="user-info-header" style="display: none;">
+                <span id="welcome-message"></span>
+                <button id="btn-logout" class="btn-logout">Sair</button>
+            </div>
+        </header>
+
+        <main>
+            <div id="logged-out-view">
+                <section class="card site-description">
+                    <h2>Bem-vindo(a) à sua Plataforma de Estudos!</h2>
+                    <p>
+                        Simplifique sua rotina acadêmica. Aqui você pode organizar suas tarefas,
+                        nunca mais perder um prazo com nosso cronograma e manter suas ideias
+                        organizadas com anotações rápidas. Faça seu cadastro ou login para começar!
+                    </p>
+                </section>
+                <nav class="auth-nav">
+                    <a href="login.html" class="menu-button auth-button">
+                        <i class="icon">🔑</i> Login
+                    </a>
+                    <a href="registrar.html" class="menu-button auth-button">
+                        <i class="icon">👤</i> Registrar
+                    </a>
+                </nav>
+            </div>
+
+            <div id="logged-in-view" style="display: none;">
+                 <nav class="home-menu"> <h2>Acesso Rápido</h2>
+                    <a href="adicionar-tarefa.html" class="menu-button">
+                        <i class="icon">➕</i> Adicionar Nova Tarefa
+                    </a>
+                    <a href="cronograma.html" class="menu-button">
+                        <i class="icon">📋</i> Ver Cronograma/Tarefas
+                    </a>
+                    <a href="anotacoes.html" class="menu-button">
+                        <i class="icon">✏️</i> Anotações Rápidas
+                    </a>
+                </nav>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Plataforma de Estudos</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
